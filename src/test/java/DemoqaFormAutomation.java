@@ -7,6 +7,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class DemoqaFormAutomation {
+    private static final String PATH_TO_IMAGE = System.getProperty("user.dir")+"/src/test/resources/chucknorris.jpg";
+
     @BeforeAll
     static void configuration() {
         Configuration.startMaximized = true;
@@ -38,7 +40,7 @@ public class DemoqaFormAutomation {
         $(byText("Music")).click();
 
         $("#currentAddress").scrollIntoView(true);
-        $(".form-file-label").click();
+        $("#uploadPicture").setValue(PATH_TO_IMAGE);
 
         $("#currentAddress").setValue("Universe");
 
@@ -47,5 +49,6 @@ public class DemoqaFormAutomation {
         $(byText("Select City")).click();
         $(byText("Jaipur")).click();
 
+        $("#submit").click();
     }
 }
