@@ -1,13 +1,16 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class DemoqaFormAutomation {
-    private static final String PATH_TO_IMAGE = System.getProperty("user.dir")+"/src/test/resources/chucknorris.jpg";
+    private final String PIC_NAME = "chucknorris.jpg";
+    private final String PATH_TO_IMAGE = System.getProperty("user.dir")+"/src/test/resources/"+PIC_NAME;
 
     @BeforeAll
     static void configuration() {
@@ -16,39 +19,71 @@ public class DemoqaFormAutomation {
 
     @Test
     void testDemoqaForm() {
+        String firstName="Chuck";
+        String lastName="Norris";
+        String userEmail="ChuckNorris@mail.com";
+        String gender="Other";
+        String userNumber="0000000001";
+        String month="March";
+        String year="1900";
+        String day="1";
+        String subject1="Computer Science";
+        String subject2="English";
+        String hobby1="Sports";
+        String hobby2="Music";
+        String currentAddress="Universe";
+        String state="Rajasthan";
+        String city="Jaipur";
+
         open("https://demoqa.com/automation-practice-form");
 
-        $("#firstName").setValue("Chuck");
-        $("#lastName").setValue("Norris");
-        $("#userEmail").setValue("ChuckNorris@mail.com");
-        $(byText("Other")).click();
-        $("#userNumber").setValue("0000000001");
+        $("#firstName").setValue(firstName);
+        $("#lastName").setValue(lastName);
+        $("#userEmail").setValue(userEmail);
+        $(byText(gender)).click();
+        $("#userNumber").setValue(userNumber);
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").click();
-        $(byText("March")).click();
+        $(byText(month)).click();
         $(".react-datepicker__year-select").click();
-        $(byText("1900")).click();
-        $(byText("1")).click();
+        $(byText(year)).click();
+        $(byText(day)).click();
 
         $("#subjectsInput").setValue("Co");
-        $(byText("Computer Science")).click();
+        $(byText(subject1)).click();
         $("#subjectsInput").setValue("En");
-        $(byText("English")).click();
+        $(byText(subject2)).click();
 
-        $(byText("Sports")).click();
-        $(byText("Music")).click();
+        $(byText(hobby1)).click();
+        $(byText(hobby2)).click();
 
         $("#currentAddress").scrollIntoView(true);
         $("#uploadPicture").setValue(PATH_TO_IMAGE);
 
-        $("#currentAddress").setValue("Universe");
+        $("#currentAddress").setValue(currentAddress);
 
         $(byText("Select State")).click();
-        $(byText("Rajasthan")).click();
+        $(byText(state)).click();
         $(byText("Select City")).click();
-        $(byText("Jaipur")).click();
+        $(byText(city)).click();
 
         $("#submit").click();
+
+        checkFields("Student Name",firstName+" "+lastName);
+        checkFields("Student Email",userEmail);
+        checkFields("Gender",gender);
+        checkFields("Student Name",firstName);
+        checkFields("Mobile",userNumber);
+        checkFields("Subjects",subject1+", "+subject2);
+        checkFields("Hobbies",hobby1+", "+hobby2);
+        checkFields("Picture",PIC_NAME);
+
+
+
+    }
+
+    private static void checkFields(String label, String value){
+    $(byXpath("//td[text()='"+label+"']/following-sibling::td")).shouldHave(Condition.matchText(value));
     }
 }
