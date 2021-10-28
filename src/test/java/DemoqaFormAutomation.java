@@ -78,8 +78,6 @@ public class DemoqaFormAutomation {
         checkFields("Hobbies", hobby1 + ", " + hobby2);
         checkFields("Picture", PIC_NAME);
         checkFields("State and City", state + " " + city);
-
-
     }
 
     private static void checkFields(String label, String value) {
@@ -87,8 +85,8 @@ public class DemoqaFormAutomation {
     }
 
     private static String dateOfBirthFormatter(String[] arr) {
-        final String DATE_PATTERN="%s %s,%s";
-        String dateFormatted= String.format(DATE_PATTERN,arr[0],arr[1], arr[2]);
+        final String DATE_PATTERN = "%s %s,%s";
+        String dateFormatted = String.format(DATE_PATTERN, arr[0], arr[1], arr[2]);
 
         return dateFormatted;
     }
