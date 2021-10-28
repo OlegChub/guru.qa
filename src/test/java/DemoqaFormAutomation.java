@@ -24,9 +24,7 @@ public class DemoqaFormAutomation {
         String userEmail="ChuckNorris@mail.com";
         String gender="Other";
         String userNumber="0000000001";
-        String month="March";
-        String year="1900";
-        String day="1";
+        String[] birthday={"1","March","1900"};
         String subject1="Computer Science";
         String subject2="English";
         String hobby1="Sports";
@@ -45,10 +43,10 @@ public class DemoqaFormAutomation {
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").click();
-        $(byText(month)).click();
+        $(byText(birthday[1])).click();
         $(".react-datepicker__year-select").click();
-        $(byText(year)).click();
-        $(byText(day)).click();
+        $(byText(birthday[2])).click();
+        $(byText(birthday[0])).click();
 
         $("#subjectsInput").setValue("Co");
         $(byText(subject1)).click();
