@@ -3,6 +3,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -57,7 +58,8 @@ public class DemoqaFormAutomation {
         $(byText(hobby2)).click();
 
         $("#currentAddress").scrollIntoView(true);
-        $("#uploadPicture").setValue(PATH_TO_IMAGE);
+//        $("#uploadPicture").setValue(PATH_TO_IMAGE);
+        $("#uploadPicture").uploadFile(new File(PATH_TO_IMAGE));
 
         $("#currentAddress").setValue(currentAddress);
 
