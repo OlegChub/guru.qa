@@ -24,4 +24,17 @@ public class Lesson4 {
         $("#wiki-wrapper").$("h1").shouldHave(text("SoftAssertions"));
         $("ol[start='3']").$("li").shouldHave(text("Using JUnit5"));
     }
+
+    @Test
+    public void checkDragAndDrop(){
+        open("https://the-internet.herokuapp.com/drag_and_drop");
+
+        //checking the order of the elements before drag-n-drop
+        $$(".column").first().shouldHave(text("A"));
+        $$(".column").last().shouldHave(text("B"));
+
+        $("#column-a").dragAndDropTo("#column-b");
+        $$(".column").last().shouldHave(text("A"));
+
+    }
 }
