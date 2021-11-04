@@ -37,4 +37,16 @@ public class Lesson4 {
         $$(".column").last().shouldHave(text("A"));
 
     }
+
+    @Test
+    public void checkDragAndDropWithActions() {
+        open("https://the-internet.herokuapp.com/drag_and_drop");
+
+        $$(".column").first().shouldHave(text("A"));
+        $$(".column").last().shouldHave(text("B"));
+
+        actions().moveToElement($("#column-a")).clickAndHold().moveByOffset(100, 0).release().perform();
+        $$(".column").last().shouldHave(text("A"));
+
+    }
 }
