@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
 
-    RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @BeforeAll
     static void configuration() {
