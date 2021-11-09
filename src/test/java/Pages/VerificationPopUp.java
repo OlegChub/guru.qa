@@ -17,7 +17,7 @@ public class VerificationPopUp {
         popUpTitle.shouldHave(text(REGISTRATION_FORM_FINAL_POPUP_TITLE));
     }
 
-    public static void checkFields(String label, String value) {
+    public static void checkFieldsInVerificationPopUp(String label, String value) {
         $(byXpath("//td[text()='" + label + "']/following-sibling::td")).shouldHave(Condition.matchText(value));
     }
 

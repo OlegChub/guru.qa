@@ -31,15 +31,15 @@ public class DemoqaFormAutomation extends TestBase {
 
         // Verification
         checkVerificationPopUpTitle();
-        checkFields("Student Name", getFirstName() + " " + getLastName());
-        checkFields("Student Email", getUserEmail());
-        checkFields("Gender", getGender());
-        checkFields("Mobile", getUserNumber());
-        checkFields("Date of Birth", dateOfBirthFormatter(getBirthDayDate()));
-        checkFields("Subjects", getSubject());
-        checkFields("Hobbies", getHobby());
-        checkFields("Picture", PIC_NAME);
-        checkFields("State and City", getState() + " " + getCity());
+        checkFieldsInVerificationPopUp("Student Name", getFirstName() + " " + getLastName());
+        checkFieldsInVerificationPopUp("Student Email", getUserEmail());
+        checkFieldsInVerificationPopUp("Gender", getGender());
+        checkFieldsInVerificationPopUp("Mobile", getUserNumber());
+        checkFieldsInVerificationPopUp("Date of Birth", dateOfBirthFormatter(getBirthDayDate()));
+        checkFieldsInVerificationPopUp("Subjects", getSubject());
+        checkFieldsInVerificationPopUp("Hobbies", getHobby());
+        checkFieldsInVerificationPopUp("Picture", PIC_NAME);
+        checkFieldsInVerificationPopUp("State and City", getState() + " " + getCity());
     }
 
 

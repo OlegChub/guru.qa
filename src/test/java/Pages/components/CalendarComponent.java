@@ -17,5 +17,4 @@ public class CalendarComponent {
         $(byText(day)).click();
     }
 
-
 }

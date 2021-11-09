@@ -5,7 +5,11 @@ import com.github.javafaker.Faker;
 import java.util.Locale;
 
 public class TestData {
+    public static final String PIC_NAME = "chucknorris.jpg";
+
     private static Faker faker = new Faker(new Locale("ru"));
+    private static String address = faker.address().fullAddress();
+
 
     private static String firstName = faker.name().firstName();
     private static String lastName = faker.name().lastName();
@@ -20,8 +24,6 @@ public class TestData {
     private static String hobby;
     private static String state = "Rajasthan";
     private static String city = "Jaipur";
-    private static String address = faker.address().fullAddress();
-    public static final String PIC_NAME = "chucknorris.jpg";
 
     public static String getFirstName() {
         return firstName;
