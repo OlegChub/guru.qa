@@ -13,35 +13,36 @@ public class DemoqaFormAutomation extends TestBase {
 
         registrationFormPage
                 .openRegistrationFormPage()
-                .enterNameInTheField(getFirstName())
-                .enterLastNameInTheField(getLastName())
-                .enterUserEmailInTheField(getUserEmail())
-                .choseUserGender(setGender())
-                .enterUserPhoneNumberInTheField(getUserNumber())
-                .calendarInit().setCalendarData(getBirthDayDate()[0], getBirthDayDate()[1],
-                        getBirthDayDate()[2]);
+                .enterNameInTheField(FIRST_NAME)
+                .enterLastNameInTheField(LAST_NAME)
+                .enterUserEmailInTheField(USER_EMAIL)
+                .choseUserGender(GENDER)
+                .enterUserPhoneNumberInTheField(USER_NUMBER)
+                .calendarInit().setCalendarData(getBirthdayItem("day"), getBirthdayItem("month"),
+                        getBirthdayItem("year"));
 
         registrationFormPage
-                .enterSubjectInTheField(setSubject())
-                .chooseHobby(setHobby())
+                .enterSubjectInTheField(SUBJECT)
+                .chooseHobby(HOBBY)
                 .uploadPicture(PIC_NAME)
-                .enterCurrentAddress(getCurrentAddress())
+                .enterCurrentAddress(ADDRESS)
                 .scrollToElement()
-                .selectState(getState())
-                .selectCity(getCity())
+                .selectState(STATE)
+                .selectCity(CITY)
                 .pressSubmitBtn();
 
         // Verification
         checkVerificationPopUpTitle();
-        checkFieldsInVerificationPopUp("Student Name", getFirstName() + " " + getLastName());
-        checkFieldsInVerificationPopUp("Student Email", getUserEmail());
-        checkFieldsInVerificationPopUp("Gender", getGender());
-        checkFieldsInVerificationPopUp("Mobile", getUserNumber());
-        checkFieldsInVerificationPopUp("Date of Birth", dateOfBirthFormatter(getBirthDayDate()));
-        checkFieldsInVerificationPopUp("Subjects", getSubject());
-        checkFieldsInVerificationPopUp("Hobbies", getHobby());
+        checkFieldsInVerificationPopUp("Student Name", FIRST_NAME + " " + LAST_NAME);
+        checkFieldsInVerificationPopUp("Student Email", USER_EMAIL);
+        checkFieldsInVerificationPopUp("Gender", GENDER);
+        checkFieldsInVerificationPopUp("Mobile", USER_NUMBER);
+        checkFieldsInVerificationPopUp("Date of Birth", dateOfBirthFormatter(BIRTHDAY));
+        checkFieldsInVerificationPopUp("Subjects", SUBJECT);
+        checkFieldsInVerificationPopUp("Hobbies", HOBBY);
         checkFieldsInVerificationPopUp("Picture", PIC_NAME);
-        checkFieldsInVerificationPopUp("State and City", getState() + " " + getCity());
+        checkFieldsInVerificationPopUp("Address", ADDRESS);
+        checkFieldsInVerificationPopUp("State and City", STATE + " " + CITY);
     }
 
 
