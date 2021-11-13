@@ -3,7 +3,7 @@ package homework.lesson5;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
-import static homework.lesson5.TestData.TestDataLesson5.*;
+import static homework.lesson5.testData.TestDataLesson5.*;
 
 
 public class TestBase {

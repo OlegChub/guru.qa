@@ -1,4 +1,4 @@
-package homework.lesson5.TestData;
+package homework.lesson5.testData;
 
 public class TestDataLesson5 {
     public static final String HOST = "https://github.com/";
