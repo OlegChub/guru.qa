@@ -1,4 +1,4 @@
-package Lesson4;
+package homework.lesson4;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Configuration;
