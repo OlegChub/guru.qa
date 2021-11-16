@@ -6,14 +6,14 @@ plugins {
 //for allure settings https://github.com/allure-framework/allure-gradle
 allure {
     report {
-        version.set("2.14.0")
+        version.set("2.16.0")
     }
     adapter {
         autoconfigure.set(true)
         aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                adapterVersion.set("2.14.0")
+                adapterVersion.set("2.16.0")
             }
         }
     }
@@ -29,8 +29,11 @@ dependencies {
             "com.codeborne:selenide:5.25.0",
             "org.junit.jupiter:junit-jupiter-api:5.8.1",
             "org.slf4j:slf4j-simple:1.6.2",
+            'org.assertj:assertj-core:3.8.0',
             "com.github.javafaker:javafaker:1.0.2",
-            'io.qameta.allure:allure-selenide:2.16.0')
+            'io.qameta.allure:allure-selenide:2.16.0',
+            'com.codeborne:xls-test:1.2',
+            'com.codeborne:pdf-test:1.7.0')
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.1"
 }
 
