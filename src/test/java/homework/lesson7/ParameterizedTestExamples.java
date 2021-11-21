@@ -43,12 +43,13 @@ public class ParameterizedTestExamples extends TestBaseWithListener {
 
 
     @ParameterizedTest(name = "Item with {1} in the name has {2} product card(s)")
-    @DisplayName("Checking products quantity")
+    @DisplayName("With Arguments Source annotation")
     @ArgumentsSource(ArgumentsSourceProvider.class)
     public void testWithArgumentsSourceProvider(List<String> credentials, String itemName, int itemCount) {
-        loginPage
-                .openLoginPage()
-                .enterLoginCredentials();
+        open("https://www.saucedemo.com");
+        $("#user-name").sendKeys(credentials.get(0));
+        $("#password").sendKeys(credentials.get(1));
+        $("#login-button").click();
         $(".title").shouldHave(Condition.text("Products"));
 
         $$(".inventory_item_name")
@@ -74,4 +75,5 @@ public class ParameterizedTestExamples extends TestBaseWithListener {
                 Arguments.arguments("problem_user", "secret_sauce")
         );
     }
+
 }
