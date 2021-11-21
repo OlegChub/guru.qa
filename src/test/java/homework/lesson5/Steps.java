@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.*;
-import static homework.lesson5.testData.TestDataLesson5.*;
+import static homework.TestData.*;
 
 
 public class Steps {

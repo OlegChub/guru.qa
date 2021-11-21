@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static homework.lesson5.testData.TestDataLesson5.*;
+import static homework.TestData.*;
 
 
 

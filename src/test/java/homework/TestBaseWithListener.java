@@ -1,14 +1,14 @@
-package homework.lesson6;
-
+package homework;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 
-import static homework.lesson5.testData.TestDataLesson5.*;
+import static homework.TestData.BROWSER_NAME;
+import static homework.TestData.BROWSER_SIZE;
 
-public class TestBaseLesson6 {
+public class TestBaseWithListener {
     @BeforeAll
     static void config(){
         Configuration.browser=BROWSER_NAME;

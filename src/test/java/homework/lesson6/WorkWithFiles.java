@@ -3,6 +3,7 @@ package homework.lesson6;
 import com.codeborne.pdftest.PDF;
 
 import com.codeborne.xlstest.XLS;
+import homework.TestBaseWithListener;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Download and check downloaded files")
-public class WorkWithFiles extends TestBaseLesson6 {
+public class WorkWithFiles extends TestBaseWithListener {
 
     @DisplayName("Download pdf file")
     @Test

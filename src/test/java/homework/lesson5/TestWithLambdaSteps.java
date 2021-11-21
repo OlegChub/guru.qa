@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static homework.lesson5.testData.TestDataLesson5.REPOSITORY_NAME;
+import static homework.TestData.REPOSITORY_NAME;
 import static io.qameta.allure.Allure.step;
 
 

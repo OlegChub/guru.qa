@@ -27,7 +27,7 @@ repositories {
 dependencies {
     testImplementation(
             "com.codeborne:selenide:5.25.0",
-            "org.junit.jupiter:junit-jupiter-api:5.8.1",
+            "org.junit.jupiter:junit-jupiter:5.8.1",
             "org.slf4j:slf4j-simple:1.6.2",
             'org.assertj:assertj-core:3.8.0',
             "com.github.javafaker:javafaker:1.0.2",
