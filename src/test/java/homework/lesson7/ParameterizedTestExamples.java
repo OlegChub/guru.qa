@@ -3,12 +3,10 @@ package homework.lesson7;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import homework.TestBaseWithListener;
+import homework.lesson7.pages.LoginPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.ArgumentsSource;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.*;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -18,7 +16,21 @@ import static com.codeborne.selenide.Selenide.*;
 
 @DisplayName("Parameterized test examples")
 public class ParameterizedTestExamples extends TestBaseWithListener {
+    LoginPage loginPage = new LoginPage();
+
     //https://www.baeldung.com/parameterized-tests-junit-5
+    @ParameterizedTest(name = "Menu item {0} checking")
+    @EnumSource(value = MenuItems.class)
+    @DisplayName("With Enum Source annotation")
+    public void testWithEnumSource(MenuItems item) {
+        loginPage
+                .openLoginPage()
+                .enterLoginCredentials();
+        $(".title").shouldHave(Condition.text("Products"));
+        $("#react-burger-menu-btn").click();
+        $(byText(item.getName())).click();
+    }
+
 
     @ParameterizedTest(name = "Book's name {0} should have {1} ISBN number")
     @CsvFileSource(resources = "/dataForLesson7.csv", numLinesToSkip = 1)
@@ -34,10 +46,9 @@ public class ParameterizedTestExamples extends TestBaseWithListener {
     @DisplayName("Checking products quantity")
     @ArgumentsSource(ArgumentsSourceProvider.class)
     public void testWithArgumentsSourceProvider(List<String> credentials, String itemName, int itemCount) {
-        open("https://www.saucedemo.com");
-        $("#user-name").sendKeys(credentials.get(0));
-        $("#password").sendKeys(credentials.get(1));
-        $("#login-button").click();
+        loginPage
+                .openLoginPage()
+                .enterLoginCredentials();
         $(".title").shouldHave(Condition.text("Products"));
 
         $$(".inventory_item_name")
@@ -50,10 +61,9 @@ public class ParameterizedTestExamples extends TestBaseWithListener {
     @MethodSource("methodDataProvider")
     @DisplayName("With Method Source annotation")
     public void testWithMethodDataProvider(String login, String password) {
-        open("https://www.saucedemo.com/");
-        $("#user-name").sendKeys(login);
-        $("#password").sendKeys(password);
-        $("#login-button").click();
+        loginPage
+                .openLoginPage()
+                .enterLoginCredentials();
         $(".title").shouldHave(Condition.text("Products"));
     }
 
@@ -64,5 +74,4 @@ public class ParameterizedTestExamples extends TestBaseWithListener {
                 Arguments.arguments("problem_user", "secret_sauce")
         );
     }
-
 }
