@@ -11,8 +11,6 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
 import static homework.TestData.*;
 
-
-
 @Owner("ochubrik")
 @Feature("Allure report")
 @DisplayName("Allure listener")
@@ -31,4 +29,5 @@ public class ClearSelenideTestWithAllureListener extends TestBase {
         $("#issue_search_results").shouldBe(Condition.visible);
 
     }
+
 }

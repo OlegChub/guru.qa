@@ -25,11 +25,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Download and check downloaded files")
 public class WorkWithFiles extends TestBaseWithListener {
 
+    private int pagesCount = 3;
+    private int expectedFilesCount=1;
+
+    private String title = "Заявление о возврате суммы излишне уплаченного";
+    private String stringExpected = "Техресурс";
+    private String expectedFileName="ksanf.xls";
+
     @DisplayName("Download pdf file")
     @Test
     public void downloadAndCheckPDFfile() throws IOException {
-        int pagesCount = 3;
-        String title = "Заявление о возврате суммы излишне уплаченного";
 
         open("https://zagorie.ru/sanatory/sale/");
         File download = $("[target='_blank']").download();
@@ -42,7 +47,6 @@ public class WorkWithFiles extends TestBaseWithListener {
     @DisplayName("Download xls file")
     @Test
     public void downloadAndCheckExcelFile() throws IOException {
-        String stringExpected = "Техресурс";
 
         open("https://ckmt.ru/price-download.html");
         File file = $("a[href*='.xls']").download();
@@ -60,8 +64,6 @@ public class WorkWithFiles extends TestBaseWithListener {
     @DisplayName("Download zip file")
     @Test
     public void downloadAndCheckZipFile() throws IOException {
-        String expectedFileName="ksanf.xls";
-        int expectedFilesCount=1;
 
         open("http://ksanf.spb.ru/prise.html");
         File file = $("a[href*='.zip']").download();
@@ -76,4 +78,5 @@ public class WorkWithFiles extends TestBaseWithListener {
         assertEquals(expectedFilesCount, listWithEntries.size());
         assertEquals(expectedFileName, listWithEntries.get(0).toString());
     }
+
 }
