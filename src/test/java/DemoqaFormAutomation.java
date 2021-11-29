@@ -1,10 +1,13 @@
 
 import Pages.RegistrationFormPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static Pages.VerificationPopUp.*;
 import static TestData.TestData.*;
 
+
+@Tag("DemoqaTest")
 public class DemoqaFormAutomation extends TestBaseRemote {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
