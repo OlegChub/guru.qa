@@ -2,7 +2,6 @@ package homework.lesson7;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
-import homework.TestBaseWithListener;
 import homework.lesson7.pages.LoginPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -17,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 @DisplayName("Parameterized test examples")
 @Tag("ParameterizedTests")
-public class ParameterizedTestExamples extends TestBaseWithListener {
+public class ParameterizedTestExamples extends TestBaseRemote {
     LoginPage loginPage = new LoginPage();
 
     //https://www.baeldung.com/parameterized-tests-junit-5
