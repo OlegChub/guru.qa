@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static Pages.VerificationPopUp.*;
 import static TestData.TestData.*;
 
-public class DemoqaFormAutomation extends TestBase {
+public class DemoqaFormAutomation extends TestBaseRemote {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @Test

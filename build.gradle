@@ -33,10 +33,34 @@ dependencies {
             "com.github.javafaker:javafaker:1.0.2",
             'io.qameta.allure:allure-selenide:2.16.0',
             'com.codeborne:xls-test:1.2',
-            'com.codeborne:pdf-test:1.7.0')
+            'com.codeborne:pdf-test:1.7.0',
+            "org.aeonbits.owner:owner:1.0.12"
+    )
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.1"
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task properties_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "properties"
+    }
 }
