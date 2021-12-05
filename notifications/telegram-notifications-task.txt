@@ -8,3 +8,10 @@ java  \
 "-Dcomm=Any comment here" \
 "-Dconfig.file=notifications/telegram.json" \
 -jar allure-notifications-3.1.2.jar
+
+
+telegram.json можно поместить в аллюр как в случае со slack notification:
+https://jenkins.autotests.cloud/job/09-Al1Chu-Lesson12-slack-notification/
+
+
+https://jenkins.autotests.cloud/job/09-Al1Chu-Lesson12-telegram-notification/
