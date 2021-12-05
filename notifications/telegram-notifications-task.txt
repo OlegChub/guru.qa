@@ -1,3 +1,6 @@
+
+//link to guide https://github.com/qa-guru/allure-notifications/blob/master/README.md
+
 //local
 java  \
 "-DprojectName=PROJECT_NAME" \
