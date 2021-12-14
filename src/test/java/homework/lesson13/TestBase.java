@@ -18,6 +18,10 @@ public class TestBase {
         Configuration.browserVersion = config.browserVersion();
         Configuration.browserSize = config.browserSize();
 
+        if (!config.remoteUrl().equals("")) {
+            Configuration.remote = config.remoteUrl();
+        }
+
         SelenideLogger.addListener("Allure", new AllureSelenide());
     }
 
