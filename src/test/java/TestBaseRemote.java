@@ -1,6 +1,6 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import helpers.Attach;
+import helpers.AllureAttachments;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -24,10 +24,10 @@ public class TestBaseRemote {
 
     @AfterEach
     public void tearDown() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.addVideo();
-        Attach.browserConsoleLogs();
+        AllureAttachments.screenshotAs("Last screenshot");
+        AllureAttachments.pageSource();
+        AllureAttachments.addVideo();
+        AllureAttachments.browserConsoleLogs();
     }
 
 }
