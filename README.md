@@ -64,5 +64,4 @@ gradle clean -DremoterUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ test
 
 ### Уведомления о прохождении автотестов в Telegram
 
-<a href="https://ibb.co/4g1bTsn"><img src="https://i.ibb.co/G3HZ2s4/2021-12-15-19-01-45.png" alt="2021-12-15-19-01-45" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>
-photo 18</a><br />
+<a href="https://ibb.co/4g1bTsn"><img src="https://i.ibb.co/G3HZ2s4/2021-12-15-19-01-45.png" alt="2021-12-15-19-01-45" border="0"></a>
