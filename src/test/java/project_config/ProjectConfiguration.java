@@ -1,4 +1,4 @@
-package homework.lesson13;
+package project_config;
 
 import org.aeonbits.owner.Config;
 

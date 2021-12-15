@@ -1,10 +1,9 @@
-package homework.lesson13;
-
 import com.codeborne.selenide.Condition;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import project_config.ProjectConfiguration;
 
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
@@ -45,10 +44,5 @@ public class VacancyTests extends TestBase {
             String headerText = "Вакансии Компании СоюзЦветТорг";
             $("#pagetitle").shouldHave(Condition.text(headerText));
         });
-    }
-
-    @Test
-    void test() {
-        System.out.println(config.browser());
     }
 }
