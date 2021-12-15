@@ -29,48 +29,37 @@ Java, Gradle, JUnit5, IntelliJ IDEA, Selenide, Jenkins, Allure TestOps, Jira, Gi
 
 Перед выполением необходимо:
 
-* в local.properies определить параметры конфигурации (для запуска тестов локально)
-* в remote.properies определить параметры конфигурации (для запуска тестов удаленно) или передать значения:
-    - browser (default chrome)
-    - browserVersion (default 89.0)
-    - browserSize (default 1920x1080)
-    - browserMobileView (mobile device name, for example iPhone X)
-    - remoteDriverUrl (url address from selenoid or grid)
-    - videoStorage (url address where you should get video)
-    - threads (number of threads)
+* В launch.properies определяются следующие параметры конфигурации (для запуска тестов удаленно):
+  - browser (default Chrome)
+  - browserVersion (default 91.0)
+  - browserSize (default 1920x1080)
+  - remoteUrl (url address from selenoid or grid)
 
-### Локально
+### Запуск локально
 
 ```
 gradle clean test
 ```
 
-### Удаленно
+### Запуск удаленно
 
 ```bash
-gradle clean -DremoteDriverUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ -DvideoStorage=https://selenoid.autotests.cloud/video/ -Dthreads=1 test
+gradle clean -DremoterUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ test
 ```
-
-### Видео о прохождении тестов
-
-<img src="https://i.ibb.co/93q2DGd/fefcc5cbac5d03c1.gif" alt="video test" border="0" />
 
 ### Запуск в Jenkins
 
 Статистика по запускам <br >
-<a href="https://ibb.co/nnKgcv6"><img src="https://i.ibb.co/CMS17Zm/statistic-jenkins.png" alt="Статистика по запускам" border="0" /></a>
+<a href="https://ibb.co/tBy7ZKX"><img src="https://i.ibb.co/tBy7ZKX/2021-12-15-18-54-02.png" alt="2021-12-15-18-54-02" border="0"></a>
 
 Параметры запуска <br >
-<a href="https://ibb.co/zbNbgHb"><img src="https://i.ibb.co/Y8b8ST8/jenkins-parametrs.png" alt="jenkins-parametrs" border="0" /></a>
-
+<a href="https://ibb.co/phH347m"><img src="https://i.ibb.co/phH347m/2021-12-15-18-58-00.png" alt="2021-12-15-18-58-00" border="0"></a>
 ### Отчёт о прохождении автотестов в Allure Report
 
-<a href="https://ibb.co/HzG3q6q"><img src="https://i.ibb.co/WyBjfZf/Allure-report.png" alt="Allure-report" border="0" /></a>
-
+<a href="https://ibb.co/3mqnbxp"><img src="https://i.ibb.co/3mqnbxp/2021-12-15-18-59-37.png" alt="2021-12-15-18-59-37" border="0"></a>
 ### Список автотестов в Allure Report
 
-<a href="https://ibb.co/sWqKV61"><img src="https://i.ibb.co/hYVBmZd/Allure-list.png" alt="Allure-list" border="0" /></a>
-
+<a href="https://ibb.co/TPzjtky"><img src="https://i.ibb.co/TPzjtky/2021-12-15-19-00-47.png" alt="2021-12-15-19-00-47" border="0"></a>
 ### Уведомления о прохождении автотестов в Telegram
 
-<a href="https://ibb.co/zFnQg63"><img src="https://i.ibb.co/kJH5TmL/2021-12-15-18-40-02.png" alt="2021-12-15-18-40-02" border="0"></a>
+<a href="https://ibb.co/4g1bTsn"><img src="https://i.ibb.co/4g1bTsn/2021-12-15-19-01-45.png" alt="2021-12-15-19-01-45" border="0"></a>
