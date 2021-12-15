@@ -64,8 +64,7 @@ gradle clean -DremoterUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ test
 
 ### Видео о прохождении тестов
 
-<a href="https://ibb.co/Zxc6YDt"><img src="https://i.ibb.co/gJtMPKH/video.gif" alt="video" border="0"></a>
-
+</a><a href="https://ibb.co/cwzhJQY"><img src="https://i.ibb.co/tzypBDL/video-online-video-cutter-com.gif" alt="video-online-video-cutter-com" border="0"></a>
 ### Уведомления о прохождении автотестов в Telegram
 
 <a href="https://ibb.co/4g1bTsn"><img src="https://i.ibb.co/G3HZ2s4/2021-12-15-19-01-45.png" alt="2021-12-15-19-01-45" border="0"></a>
