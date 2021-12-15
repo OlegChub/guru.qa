@@ -1,5 +1,4 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.AllureAttachments;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -38,6 +37,6 @@ public class TestBase {
         AllureAttachments.browserConsoleLogs();
         AllureAttachments.addVideo();
 
-        Selenide.closeWebDriver();
+//        Selenide.closeWebDriver();
     }
 }
