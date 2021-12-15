@@ -49,22 +49,22 @@ gradle clean -DremoterUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ test
 ### Запуск в Jenkins
 
 Статистика по запускам <br >
-<a href="https://ibb.co/tBy7ZKX"><img src="https://i.ibb.co/Nxw81CS/2021-12-15-18-54-02.png" alt="2021-12-15-18-54-02" border="0"></a>
-
+<a href="https://ibb.co/TtdQZMc"><img src="https://i.ibb.co/Zx7Q3zd/2021-12-15-22-57-39.png" alt="2021-12-15-22-57-39" border="0"></a>
 Параметры запуска <br >
 <a href="https://ibb.co/phH347m"><img src="https://i.ibb.co/BnhgTp1/2021-12-15-18-58-00.png" alt="2021-12-15-18-58-00" border="0"></a>
 
 ### Отчёт о прохождении автотестов в Allure Report
 
-<a href="https://ibb.co/3mqnbxp"><img src="https://i.ibb.co/b5ZkV4s/2021-12-15-18-59-37.png" alt="2021-12-15-18-59-37" border="0"></a>
+<a href="https://ibb.co/LZ5m6WF"><img src="https://i.ibb.co/kS1j0f7/2021-12-15-22-55-48.png" alt="2021-12-15-22-55-48" border="0"></a>
 
 ### Список автотестов в Allure Report
 
-<a href="https://ibb.co/TPzjtky"><img src="https://i.ibb.co/kqYbXxZ/2021-12-15-19-00-47.png" alt="2021-12-15-19-00-47" border="0"></a>
+<a href="https://ibb.co/0YHYXvV"><img src="https://i.ibb.co/5sbs9wx/2021-12-15-22-53-22.png" alt="2021-12-15-22-53-22" border="0"></a>
 
 ### Видео о прохождении тестов
 
 </a><a href="https://ibb.co/cwzhJQY"><img src="https://i.ibb.co/tzypBDL/video-online-video-cutter-com.gif" alt="video-online-video-cutter-com" border="0"></a>
+
 ### Уведомления о прохождении автотестов в Telegram
 
-<a href="https://ibb.co/4g1bTsn"><img src="https://i.ibb.co/G3HZ2s4/2021-12-15-19-01-45.png" alt="2021-12-15-19-01-45" border="0"></a>
+<a href="https://ibb.co/ZLSmW56"><img src="https://i.ibb.co/SscrRbX/2021-12-15-22-58-39.png" alt="2021-12-15-22-58-39" border="0"></a>
