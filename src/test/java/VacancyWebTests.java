@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class VacancyTests extends TestBase {
+public class VacancyWebTests extends TestBase {
     BrowserConfig config = ConfigFactory.create(BrowserConfig.class, System.getProperties());
 
     @BeforeEach
