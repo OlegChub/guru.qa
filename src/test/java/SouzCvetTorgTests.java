@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class VacancyTests extends TestBase {
+public class SouzCvetTorgTests extends TestBase {
     ProjectConfiguration config = ConfigFactory.create(ProjectConfiguration.class, System.getProperties());
 
     String vacanciesPageURL = "https://www.souzcvettorg.ru/about/job/";
