@@ -53,6 +53,7 @@ gradle clean -DremoterUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ test
 
 Статистика по запускам <br >
 <a href="https://ibb.co/yFt5MYK"><img src="https://i.ibb.co/MkrpjGK/2021-12-22-16-11-14.png" alt="2021-12-22-16-11-14" border="0"></a>
+
 Параметры запуска <br >
 <a href="https://ibb.co/BLmVPhm"><img src="https://i.ibb.co/wyTNLnT/2021-12-22-16-09-31.png" alt="2021-12-22-16-09-31" border="0"></a>
 
