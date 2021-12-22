@@ -3,9 +3,12 @@
 ## Покрыт следующий функционал
 
 * UI тесты
-    * ✅ Проверка наличия хедера на странице
-    * ✅ Проверка правильности title страницы
-    * ✅ Проверка наличия вакансии на странице
+  * ✅ Проверка наличия хедера на странице
+  * ✅ Проверка правильности title страницы
+  * ✅ Проверка наличия вакансии на странице
+  * ✅ Проверка номера телефона на странице контактов
+  * ✅ Проверка кол-ва интервалов доставки на странице доставки и оплаты
+  * ✅ Проверка кол-ва размещенных и активных магазинов
 
 ## Технологический стек
 
@@ -49,17 +52,17 @@ gradle clean -DremoterUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ test
 ### Запуск в Jenkins
 
 Статистика по запускам <br >
-<a href="https://ibb.co/TtdQZMc"><img src="https://i.ibb.co/Zx7Q3zd/2021-12-15-22-57-39.png" alt="2021-12-15-22-57-39" border="0"></a>
+<a href="https://ibb.co/yFt5MYK"><img src="https://i.ibb.co/MkrpjGK/2021-12-22-16-11-14.png" alt="2021-12-22-16-11-14" border="0"></a>
 Параметры запуска <br >
-<a href="https://ibb.co/phH347m"><img src="https://i.ibb.co/BnhgTp1/2021-12-15-18-58-00.png" alt="2021-12-15-18-58-00" border="0"></a>
+<a href="https://ibb.co/BLmVPhm"><img src="https://i.ibb.co/wyTNLnT/2021-12-22-16-09-31.png" alt="2021-12-22-16-09-31" border="0"></a>
 
 ### Отчёт о прохождении автотестов в Allure Report
 
-<a href="https://ibb.co/LZ5m6WF"><img src="https://i.ibb.co/kS1j0f7/2021-12-15-22-55-48.png" alt="2021-12-15-22-55-48" border="0"></a>
+<a href="https://ibb.co/TRNLXG2"><img src="https://i.ibb.co/RPJynKb/2021-12-22-16-04-26.png" alt="2021-12-22-16-04-26" border="0"></a>
 
 ### Список автотестов в Allure Report
 
-<a href="https://ibb.co/0YHYXvV"><img src="https://i.ibb.co/5sbs9wx/2021-12-15-22-53-22.png" alt="2021-12-15-22-53-22" border="0"></a>
+<a href="https://ibb.co/nm8RY3r"><img src="https://i.ibb.co/8s4XfzM/2021-12-22-16-12-59.png" alt="2021-12-22-16-12-59" border="0"></a>
 
 ### Видео о прохождении тестов
 
@@ -67,4 +70,4 @@ gradle clean -DremoterUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ test
 
 ### Уведомления о прохождении автотестов в Telegram
 
-<a href="https://ibb.co/ZLSmW56"><img src="https://i.ibb.co/SscrRbX/2021-12-15-22-58-39.png" alt="2021-12-15-22-58-39" border="0"></a>
+<a href="https://ibb.co/rMNd4L9"><img src="https://i.ibb.co/ctVYDpq/2021-12-22-16-03-39.png" alt="2021-12-22-16-03-39" border="0"></a>
