@@ -13,7 +13,7 @@ public interface BrowserConfig extends Config {
     @DefaultValue("Chrome")
     String browser();
 
-    @DefaultValue("91.0")
+    @DefaultValue("89.0")
     String browserVersion();
 
     @DefaultValue("1920x1080")

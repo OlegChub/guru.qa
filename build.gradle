@@ -30,11 +30,8 @@ dependencies {
             "org.junit.jupiter:junit-jupiter:5.8.1",
             "org.slf4j:slf4j-simple:1.6.2",
             "org.assertj:assertj-core:3.19.0",
-            "com.github.javafaker:javafaker:1.0.2",
             'io.qameta.allure:allure-selenide:2.16.0',
-            'com.codeborne:xls-test:1.2',
-            'org.aeonbits.owner:owner:1.0.12',
-            'com.codeborne:pdf-test:1.7.0')
+            'org.aeonbits.owner:owner:1.0.12')
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.1"
 }
 

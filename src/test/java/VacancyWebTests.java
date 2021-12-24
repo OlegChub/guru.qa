@@ -1,16 +1,13 @@
 import com.codeborne.selenide.Condition;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import project_config.BrowserConfig;
 
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class VacancyWebTests extends TestBase {
-    BrowserConfig config = ConfigFactory.create(BrowserConfig.class, System.getProperties());
 
     @BeforeEach
     void loadVacancyPage() {
