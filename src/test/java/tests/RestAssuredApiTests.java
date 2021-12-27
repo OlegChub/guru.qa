@@ -47,10 +47,10 @@ public class RestAssuredApiTests {
                 .post("/api/users")
                 .then()
                 .statusCode(201)
-                .body("name", is("Neo"))
-                .body("job", is("Selected"))
-                .body("id", notNullValue())
-                .body("createdAt", notNullValue());
+                .body("name", is("Neo"),
+                        "job", is("Selected"),
+                        "id", notNullValue(),
+                        "createdAt", notNullValue());
     }
 
 
@@ -78,8 +78,8 @@ public class RestAssuredApiTests {
                 .post("/api/register")
                 .then()
                 .statusCode(200)
-                .body("id", is(4))
-                .body("token", is("QpwL5tke4Pnpja7X4"));
+                .body("id", is(4),
+                        "token", is("QpwL5tke4Pnpja7X4"));
     }
 
 
