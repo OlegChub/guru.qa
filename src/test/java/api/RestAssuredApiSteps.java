@@ -8,7 +8,8 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.restassured.RestAssured.given;
 
 public class RestAssuredApiSteps {
-    public static Cookies authCookies;
+//    CredentialsConfig credentialsConfig= ConfigFactory.create(CredentialsConfig.class,)
+public static Cookies authCookies;
 
     public static Cookies loginAndGetCookies() {
         return authCookies =
