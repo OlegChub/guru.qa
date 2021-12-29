@@ -12,8 +12,6 @@ import static config.AppConfig.websiteConfig;
 
 public class BaseTest {
 
-//    static AppConfig appConfig=new AppConfig();
-
     @BeforeAll
     static void setup() {
         RestAssured.baseURI = websiteConfig.getURL();
