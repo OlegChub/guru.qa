@@ -13,6 +13,7 @@ import static io.qameta.allure.Allure.step;
 
 public class ApiUiTests extends BaseTest {
     String getWishListItemCounter;
+    String cookieName = "NOPCOMMERCE.AUTH";
     Response wishListItemsQuantity;
 
     @Test
@@ -35,7 +36,7 @@ public class ApiUiTests extends BaseTest {
         });
 
         step("Add auth cookie to browser", () -> {
-            RestAssuredApiSteps.addAuthCookieToBrowser();
+            RestAssuredApiSteps.addAuthCookieToBrowser(cookieName);
         });
 
         step("Open main page", () -> {

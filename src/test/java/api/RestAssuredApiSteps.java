@@ -38,9 +38,9 @@ public class RestAssuredApiSteps {
                         .extract().response();
     }
 
-    public static void addAuthCookieToBrowser() {
+    public static void addAuthCookieToBrowser(String cookieName) {
         getWebDriver().manage().addCookie(
-                new Cookie("NOPCOMMERCE.AUTH", authCookies.getValue("NOPCOMMERCE.AUTH")));
+                new Cookie(cookieName, authCookies.getValue(cookieName)));
     }
 
 }
