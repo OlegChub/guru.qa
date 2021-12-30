@@ -3,6 +3,8 @@ package tests;
 import api.RestAssuredApiSteps;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static api.RestAssuredApiSteps.authCookies;
@@ -17,6 +19,7 @@ public class ApiUiTests extends BaseTest {
     Response wishListItemsQuantity;
 
     @Test
+    @Tags({@Tag("Api"), @Tag("Api+UI")})
     @DisplayName("Add to wishlist and check it on WEB")
     void addToWishList() {
         step("Login and get cookies", () -> {
