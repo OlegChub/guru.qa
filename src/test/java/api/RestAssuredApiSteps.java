@@ -30,7 +30,7 @@ public class RestAssuredApiSteps {
     public static Response addToWishListWithResponse(Cookies cookies) {
         return
                 given()
-                        .cookies(authCookies)
+                        .cookies(cookies)
                         .when()
                         .post("/addproducttocart/details/43/2")
                         .then()
