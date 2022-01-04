@@ -81,7 +81,7 @@ public class BookStoreApiTests {
                 .spec(resSpec)
                 .log().body()
                 .assertThat()
-                .body(matchesJsonSchemaInClasspath("BooksList-schema.json"));
+                .body(matchesJsonSchemaInClasspath("schema/BooksList-schema.json"));
     }
 
 }
