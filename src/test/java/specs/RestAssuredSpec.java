@@ -21,5 +21,4 @@ public class RestAssuredSpec {
     static public ResponseSpecification resSpec = new ResponseSpecBuilder()
             .expectStatusCode(200)
             .build();
-//            .log().body();
 }
