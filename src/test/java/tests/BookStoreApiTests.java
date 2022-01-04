@@ -8,9 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static specs.RestAssuredSpec.requestSpecification;
+import static specs.RestAssuredSpec.resSpec;
 
 public class BookStoreApiTests {
     String isbn = "9781449325862";
@@ -51,7 +53,7 @@ public class BookStoreApiTests {
                 .when()
                 .post("/Account/v1/GenerateToken")
                 .then()
-                .statusCode(200)
+                .spec(resSpec)
                 .body("status", is("Success"),
                         "result", is("User authorized successfully."))
                 .log().body();
@@ -65,9 +67,21 @@ public class BookStoreApiTests {
                 .when()
                 .post("/Account/v1/Authorized")
                 .then()
-                .statusCode(200)
+                .spec(resSpec)
                 .log().body();
     }
 
+    @Test
+    @DisplayName("Validate books list json schema")
+    void BooksListJsonSchemaValidation() {
+        given(requestSpecification)
+                .when()
+                .get("/BookStore/v1/Books")
+                .then()
+                .spec(resSpec)
+                .log().body()
+                .assertThat()
+                .body(matchesJsonSchemaInClasspath("BooksList-schema.json"));
+    }
 
 }

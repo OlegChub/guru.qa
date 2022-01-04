@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome2",
+    "definitions": {
+        "Welcome2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "books": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Book"
+                    }
+                }
+            },
+            "required": [
+                "books"
+            ],
+            "title": "Welcome2"
+        },
+        "Book": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "isbn": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "subTitle": {
+                    "type": "string"
+                },
+                "author": {
+                    "type": "string"
+                },
+                "publish_date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "publisher": {
+                    "type": "string"
+                },
+                "pages": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".html"
+                    ]
+                }
+            },
+            "required": [
+                "author",
+                "description",
+                "isbn",
+                "pages",
+                "publish_date",
+                "publisher",
+                "subTitle",
+                "title",
+                "website"
+            ],
+            "title": "Book"
+        }
+    }
+}
