@@ -1,36 +1,24 @@
 package tests;
 
 
+import helper.LombokBook;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static specs.RestAssuredSpec.requestSpecification;
 import static specs.RestAssuredSpec.resSpec;
 
 public class BookStoreApiTests {
     String isbn = "9781449325862";
-    Map<String, String> data = new HashMap<String, String>() {{
-        put("userName", "alex");
-        put("password", "asdsad#frew_DFS2");
-    }};
+    String title = "Git Pocket Guide";
+    String author = "Richard E. Silverman";
+    String date = "2020-06-04T08:48:39.000Z";
+    Integer pageCount = 234;
 
-    @Test
-    @DisplayName("Get books list")
-    void getBooksList() {
-        given(requestSpecification)
-                .get("/BookStore/v1/Books")
-                .then()
-                .statusCode(200)
-                .body("books", notNullValue())
-                .log().body();
-    }
 
     @Test
     @DisplayName("Get book")
@@ -40,48 +28,50 @@ public class BookStoreApiTests {
                 .then()
                 .statusCode(200)
                 .body("isbn", is(isbn),
-                        "title", is("Git Pocket Guide"),
-                        "author", is("Richard E. Silverman"))
+                        "title", is(title),
+                        "author", is(author))
                 .log().body();
     }
 
     @Test
-    @DisplayName("Generate user token")
-    void generateToken() {
-        given(requestSpecification)
-                .body(data)
-                .when()
-                .post("/Account/v1/GenerateToken")
-                .then()
-                .spec(resSpec)
-                .body("status", is("Success"),
-                        "result", is("User authorized successfully."))
-                .log().body();
+    @DisplayName("Get book with lombok help")
+    void getOneBookWithLombok() {
+        LombokBook data =
+                given(requestSpecification)
+                        .get("/BookStore/v1/Book?ISBN=" + isbn)
+                        .then()
+                        .statusCode(200)
+                        .extract().as(LombokBook.class);
+
+        assertEquals(isbn, data.getIsbn());
+        assertEquals(title, data.getTitle());
+        assertEquals(author, data.getAuthor());
+        assertEquals(pageCount, data.getPages());
+        assertEquals(date, data.getPublishDate());
     }
 
     @Test
-    @DisplayName("Authorize user")
-    void authorizeUser() {
-        given(requestSpecification)
-                .body(data)
-                .when()
-                .post("/Account/v1/Authorized")
-                .then()
-                .spec(resSpec)
-                .log().body();
-    }
-
-    @Test
-    @DisplayName("Validate books list json schema")
-    void BooksListJsonSchemaValidation() {
+    @DisplayName("Check website is present with Groovy filter in books list")
+    void CheckWebSiteWithGroovyInBooksList() {
         given(requestSpecification)
                 .when()
                 .get("/BookStore/v1/Books")
                 .then()
                 .spec(resSpec)
-                .log().body()
-                .assertThat()
-                .body(matchesJsonSchemaInClasspath("schema/BooksList-schema.json"));
+                .body("books.findAll{it.website}.website.flatten()",
+                        hasItem("http://speakingjs.com/"));
+    }
+
+    @Test
+    @DisplayName("Check isbn quantity with Groovy filter in books list")
+    void CountIsbnWithGroovyInBooksList() {
+        given(requestSpecification)
+                .when()
+                .get("/BookStore/v1/Books")
+                .then()
+                .spec(resSpec)
+                .body("books.findAll{it.isbn}.size()",
+                        is(8));
     }
 
 }
