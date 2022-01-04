@@ -34,8 +34,8 @@ public class BookStoreApiTests {
     }
 
     @Test
-    @DisplayName("Get book with lombok help")
-    void getOneBookWithLombok() {
+    @DisplayName("Check book fields with lombok help")
+    void checkBookFieldsWithLombok() {
         LombokBook data =
                 given(requestSpecification)
                         .get("/BookStore/v1/Book?ISBN=" + isbn)
@@ -52,7 +52,7 @@ public class BookStoreApiTests {
 
     @Test
     @DisplayName("Check website is present with Groovy filter in books list")
-    void CheckWebSiteWithGroovyInBooksList() {
+    void checkWebSiteWithGroovyInBooksList() {
         given(requestSpecification)
                 .when()
                 .get("/BookStore/v1/Books")
@@ -64,7 +64,7 @@ public class BookStoreApiTests {
 
     @Test
     @DisplayName("Check isbn quantity with Groovy filter in books list")
-    void CountIsbnWithGroovyInBooksList() {
+    void countIsbnWithGroovyInBooksList() {
         given(requestSpecification)
                 .when()
                 .get("/BookStore/v1/Books")
