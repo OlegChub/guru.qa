@@ -2,6 +2,7 @@ package specs;
 
 
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -19,6 +20,7 @@ public class RestAssuredSpec {
                     .log().all();
 
     static public ResponseSpecification resSpec = new ResponseSpecBuilder()
+            .log(LogDetail.ALL)
             .expectStatusCode(200)
             .build();
 }
