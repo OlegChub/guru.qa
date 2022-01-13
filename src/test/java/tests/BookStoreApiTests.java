@@ -76,7 +76,7 @@ public class BookStoreApiTests {
     }
 
     @Test
-    @DisplayName("Check book page quantity with Models")
+    @DisplayName("Check book page quantity using Models")
     void checkBookPageCount() {
         Books data =
                 given(requestSpecification)
