@@ -2,6 +2,7 @@ package tests;
 
 
 import helper.LombokBook;
+import model.Books;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -72,6 +73,21 @@ public class BookStoreApiTests {
                 .spec(resSpec)
                 .body("books.findAll{it.isbn}.size()",
                         is(8));
+    }
+
+    @Test
+    @DisplayName("Check book page quantity with Models")
+    void checkBookPageCount() {
+        Books data =
+                given(requestSpecification)
+                        .when()
+                        .get("/BookStore/v1/Books")
+                        .then()
+                        .spec(resSpec)
+                        .extract().as(Books.class);
+
+        int pageActualCount = data.getBooks().get(0).getPages();
+        assertEquals(pageCount, pageActualCount);
     }
 
 }
