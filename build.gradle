@@ -1,42 +1,47 @@
 plugins {
     id 'java-library'
-    id 'io.qameta.allure' version '2.8.1'
-    id "io.freefair.lombok" version "6.3.0"
+    id "io.qameta.allure" version "2.9.6"
 }
 
 repositories {
     mavenCentral()
 }
 
-def junitVersion = "5.8.1",
-    allureVersion = "2.16.1"
+def allureVersion = "2.17.2",
+    junitVersion = "5.8.2",
+    slf4jVersion = "1.7.32"
 
 allure {
-    version = allureVersion
-    autoconfigure = true
-    aspectjweaver = true
-    configuration = "testImplementation"
-    useJUnit5 {
-        version = allureVersion
+    report {
+        version.set(allureVersion)
+    }
+    adapter {
+        autoconfigure.set(true)
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set(allureVersion)
+            }
+        }
     }
 }
 
 dependencies {
     testImplementation(
-            "io.rest-assured:rest-assured:4.3.1",
-            "io.rest-assured:json-schema-validator:4.4.0",
-            "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "org.assertj:assertj-core:3.19.0",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+            "com.codeborne:selenide:5.25.0",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.appium:java-client:7.6.0",
+            "io.rest-assured:rest-assured:4.4.0",
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "org.aeonbits.owner:owner:1.0.4")
+    testRuntimeOnly(
+            "org.slf4j:slf4j-simple:$slf4jVersion",
+            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
 }
-
 
 tasks.withType(Test) {
     systemProperties(System.getProperties())
