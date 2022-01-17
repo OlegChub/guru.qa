@@ -1,7 +1,9 @@
 package driver;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.ConfigSetup;
 import io.appium.java_client.android.AndroidDriver;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -9,10 +11,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
+    ConfigSetup configSetup = ConfigFactory.create(ConfigSetup.class, System.getProperties());
 
-    public static URL getBrowserstackUrl() {
+
+    public URL getBrowserstackUrl() {
         try {
-            return new URL("http://hub.browserstack.com/wd/hub");
+            return new URL(configSetup.browserstackURL());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -21,15 +25,15 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
-        desiredCapabilities.setCapability("browserstack.user", "alchu_5QWANU");
-        desiredCapabilities.setCapability("browserstack.key", "yzxWEUPx6sKZNv2GgQJZ");
+        desiredCapabilities.setCapability("browserstack.user", configSetup.browserstackUser());
+        desiredCapabilities.setCapability("browserstack.key", configSetup.browserstackKey());
 
         // Set URL of the application under test
-        desiredCapabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        desiredCapabilities.setCapability("app", configSetup.appLink());
 
         // Specify device and os_version for testing
-        desiredCapabilities.setCapability("device", "Google Pixel 3");
-        desiredCapabilities.setCapability("os_version", "9.0");
+        desiredCapabilities.setCapability("device", configSetup.device());
+        desiredCapabilities.setCapability("os_version", configSetup.osVersion());
 
         // Set other BrowserStack capabilities
         desiredCapabilities.setCapability("project", "First Java Project");
