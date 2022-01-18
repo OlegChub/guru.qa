@@ -1,7 +1,7 @@
 package driver;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.ConfigSetup;
+import config.BrowserstackConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
-    ConfigSetup configSetup = ConfigFactory.create(ConfigSetup.class, System.getProperties());
+    BrowserstackConfig configSetup = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
 
     public URL getBrowserstackUrl() {

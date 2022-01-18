@@ -7,7 +7,7 @@ import org.aeonbits.owner.Config;
         "system:properties",
         "classpath: resources/credentials.properties"
 })
-public interface ConfigSetup extends Config {
+public interface BrowserstackConfig extends Config {
     @DefaultValue("alchu_5QWANU")
     @Key("browserstackUser")
     String browserstackUser();
