@@ -2,31 +2,23 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({
-        "system:properties",
-        "classpath: resources/credentials.properties"
-})
+@Config.Sources("classpath:browserstack.properties")
 public interface BrowserstackConfig extends Config {
-    @DefaultValue("alchu_5QWANU")
     @Key("browserstackUser")
     String browserstackUser();
 
-    @DefaultValue("yzxWEUPx6sKZNv2GgQJZ")
     @Key("browserstackKey")
     String browserstackKey();
 
-    @DefaultValue("bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c")
     @Key("appLink")
     String appLink();
 
-    @DefaultValue("Google Pixel 3")
+    @Key("device")
     String device();
 
-    @DefaultValue("9.0")
+    @Key("os_version")
     String osVersion();
 
-    @DefaultValue("http://hub.browserstack.com/wd/hub")
     @Key("browserstackURL")
     String browserstackURL();
 }
