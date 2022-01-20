@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class EmulatorTests {
+public class EmulatorTests extends EmulatorTestBase {
 
     @Test
     @DisplayName("Search results list is not empty")
