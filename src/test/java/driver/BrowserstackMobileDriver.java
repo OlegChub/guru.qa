@@ -14,9 +14,9 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     BrowserstackConfig configSetup = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
 
-    public URL getBrowserstackUrl() {
+    public static URL getBrowserstackUrl() {
         try {
-            return new URL(configSetup.browserstackURL());
+            return new URL("http://hub.browserstack.com/wd/hub");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
