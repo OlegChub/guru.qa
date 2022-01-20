@@ -1,7 +1,7 @@
 package driver;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.EmulatorConfig;
+import config.RealDeviceConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +12,8 @@ import java.net.URL;
 
 import static utils.FileUtils.getAbsolutePath;
 
-public class EmulatorDriver implements WebDriverProvider {
-    EmulatorConfig configSetup = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
+public class RealDeviceDriver implements WebDriverProvider {
+    RealDeviceConfig configSetup = ConfigFactory.create(RealDeviceConfig.class, System.getProperties());
 
 
     public URL getBrowserstackUrl() {
@@ -23,7 +23,6 @@ public class EmulatorDriver implements WebDriverProvider {
             throw new RuntimeException(e);
         }
     }
-
 
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
