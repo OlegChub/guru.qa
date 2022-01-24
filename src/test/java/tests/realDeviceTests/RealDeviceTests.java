@@ -10,7 +10,6 @@ public class RealDeviceTests {
 
     @Test
     void searchWikipediaTest() {
-        //back();
         $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
                 .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
         $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
